@@ -1,3 +1,3 @@
-# HAND PHOENIX APPLICATION 
+# HANDY PHOENIX APPLICATION 
 
 is a publication web app 
