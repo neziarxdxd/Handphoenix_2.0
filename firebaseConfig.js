@@ -1,5 +1,6 @@
-// Your web app's Firebase configuration
+// global values
 var admin_username,admin_password;
+// Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyCTz9gyBF0SddLL5hCm1-3jS-R0nFwidZM",
     authDomain: "handyphoenix-623fa.firebaseapp.com",
@@ -11,6 +12,7 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  // FOR ADMIN
   var fb_tblAdmin=firebase.database().ref().child("tbl_Admin");
   fb_tblAdmin.on("value",snap =>{
     admin_username=snap.child("username").val();
@@ -18,15 +20,18 @@ var firebaseConfig = {
     });
 
   function loginNow(){
-      var username= document.getElementById("txtUsername").value;
-      var password = document.getElementById("txtPassword").value;
+      var username= document.getElementById("inputEmail").value;
+      var password = document.getElementById("inputPassword").value;
       
       if (username==admin_username && password ==admin_password){
           console.log("SUCCESS");
+          location.href = "admin_main.html";
+          $('#success.toast').toast('show');
       }
       else{
-          console.log("ISA PA LORD");
-          document.getElementById("txtUsername").value="ULET";
-        }
-  }
+          console.log("ISA PA LORD");      
+          $('#wrong.toast').toast('show');      
+          }
+}
+// FOR 
 
