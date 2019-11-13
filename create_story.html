@@ -26,6 +26,8 @@
     <title>Document</title>
 </head>
 <body>
+    <script script type="text/javascript" src="firebase.js"></script>
+    <script script type="text/javascript"  src="firebaseConfig.js"></script>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Fixed navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,24 +55,28 @@
         <h1>Create your story here</h1>
         <br>
         
-        <div class="file-upload-wrapper">
-          <p>Upload your image here</p>
-          <input type="file" id="input-file-now" class="file-upload" />
-        </div>
+        
+          
+          <!-- UPLOAD -->
+          <input type="text" id="rates">
+          <progress value="0" max="100" id="uploader">0%</progress>
+          <input type="file" id="fileButton" value="upload">
+
+     
         <br>
         <b>STORY ID: </b>fdfdfdfdfd
         <br>
         <br>
-            <input type="text" class="form-control" placeholder="Title of your article" style="width: 80%;">
+            <input type="text" class="form-control" id = "txt_Title" placeholder="Title of your article" style="width: 80%;">
             <br>
-            <textarea class="form-control" id="mainText" rows="5" style="width: 80%;" placeholder="Your story goes here"></textarea>
+            <textarea class="form-control" id="txt_Content" rows="5" style="width: 80%;" placeholder="Your story goes here"></textarea>
             <div class="comment-div">
             <label>Comment: </label>
-            <textarea class="form-control" id="mainText" rows="3" style="width: 80%;" placeholder=""></textarea>
+            <textarea class="form-control" id="txt_Comment" rows="3" style="width: 80%;" placeholder=""></textarea>
             </div>
             <div style= "text-align: right; padding-right: 20%; padding-top: 5%;">
                     <input class="btn btn-danger" type="submit" value="Delete">
-                    <input class="btn btn-primary" type="submit" value="Submit">
+                    <input class="btn btn-primary" type="submit" value="Submit" onclick="insertStory()">
              </div>
    
         </div>
@@ -86,8 +92,6 @@
         <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
         <script src="assets/js/vendor/popper.min.js"></script>
         <script src="dist/js/bootstrap.min.js"></script>
-        <script>
-        $('.file-upload').file_upload();
-        </script>
+        
 </body>
 </html>
