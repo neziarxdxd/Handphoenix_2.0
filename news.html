@@ -15,6 +15,7 @@
             }
            
             </style>
+            <script src="jquery.min.js"></script>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,6 +27,8 @@
             <title>Handy Phoenix News</title>
 </head>
 <body>
+    <script script type="text/javascript" src="firebase.js"></script>
+    <script script type="text/javascript"  src="firebaseConfig.js"></script>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <a class="navbar-brand" href="#">Fixed navbar</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,18 +53,11 @@
                     </div>           
             </nav>
         
-            <div class="panmenu" style="margin: 10%;">
+            <div class="panmenu" style="margin: 10%;" id = "collect">
                     <div class="title-stories" style="padding-bottom: 5%;padding-top: 5%;">
                            <h1>STORIES FOR YOU</h1>
                         </div>
-                    <div class="card mb-3" style="max-width: 50rem;">
-                            <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/handyphoenix-623fa.appspot.com/o/folder_name%2Feinstein.jpg?alt=media&token=2052dd45-3c90-4a96-8c8e-e3e9f7451f19" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                    </div>
+      
      
             </div>
         

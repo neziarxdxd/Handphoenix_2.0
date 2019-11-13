@@ -13,11 +13,6 @@ var firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
-
-
-
-
 window.onload = function (){
     var uploader= document.getElementById('uploader');
     var fileButton = document.getElementById('fileButton');
@@ -87,4 +82,24 @@ function insertStory(){
       fb_tblArticle.push(PushStories);
 }
 
-
+var rootRef = firebase.database().ref().child("tbl_article");
+  rootRef.on("child_added", snap =>
+  {
+    var comment_story = snap.child("comment_story").val();
+    var content_story = snap.child("content_story").val();
+    var publish_date=snap.child("publish_date").val();
+    var publish_time=snap.child("publish_time").val();
+    var title_story=snap.child("title_story").val();      
+      
+        var doc =  `  <div class="card mb-3" style="max-width: 50rem;">
+        <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/handyphoenix-623fa.appspot.com/o/folder_name%2Feinstein.jpg?alt=media&token=2052dd45-3c90-4a96-8c8e-e3e9f7451f19" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">${title_story}</h5>
+          <p class="card-text">${content_story.split(/\s+/).slice(0,10).join(" ") +"..."}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <p class="card-text"><small class="text-muted">Published : ${publish_date} . ${publish_time} </small></p>
+        </div>
+      </div>  `
+      
+        $("#collect").append(doc);
+  });
